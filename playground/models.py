@@ -12,7 +12,8 @@ class Post(models.Model):
     title = models.CharField(max_length=255, blank=True, null=True)
     body = models.TextField()
     image = models.ImageField(upload_to='media/posts/')
-    published_at = models.DateTimeField()
+    is_published = models.BooleanField(default=False)
+    published_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 
